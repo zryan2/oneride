@@ -3,6 +3,7 @@ package com.babydragons.oneride.oneride.controllers;
 import com.babydragons.database.dao.UserRepository;
 import com.babydragons.database.entities.UserEntity;
 import com.babydragons.oneride.oneride.models.UserResponse;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,10 +16,15 @@ import java.util.List;
 @RequestMapping("/oneride")
 public class OneRideController {
 
-
+    @Autowired
     private UserRepository userRepository;
 
     @GetMapping
+    public String test(){
+        return "test";
+    }
+
+    @GetMapping("/users")
     public List<UserResponse> getResources(){
         Iterable<UserEntity> users = userRepository.findAll();
         List<UserResponse> responses = new ArrayList<>();
@@ -28,7 +34,9 @@ public class OneRideController {
         return responses;
     }
 
-    @PostMapping
+
+
+    @PostMapping("/users")
     public void saveData(){
         userRepository.save(new UserEntity(1L, "test"));
         userRepository.save(new UserEntity(2L, "test"));
