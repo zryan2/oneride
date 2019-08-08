@@ -1,11 +1,20 @@
 package com.babydragons.oneride.oneride.models;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+
 public class UpdateUserRequest {
+    @NotNull
     private String username;
+    @NotBlank
     private int balance;
+    @NotBlank
     private String rideOrDrive;
+    @NotBlank
     private String startTime;
+    @NotBlank
     private String endTime;
+    @NotBlank
     private String day;
 
     public String getUsername() {
