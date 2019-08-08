@@ -61,7 +61,8 @@ public class FirebaseConnection {
             @Override
             public void onDataChange(DataSnapshot snapshot) {
                 for (DataSnapshot data : snapshot.getChildren()){
-                    System.out.println(data);
+                    System.out.println(data.getValue());
+//                    if(data.getValue()[0])
                 }
             }
 

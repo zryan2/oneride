@@ -24,6 +24,7 @@ import java.util.Map;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutionException;
 
+@CrossOrigin
 @RestController
 @RequestMapping("/oneride")
 public class OneRideController {
