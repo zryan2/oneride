@@ -1,12 +1,23 @@
 package com.babydragons.oneride.oneride.models;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+
 public class UpdateUserRequest {
+    @NotNull
     private String username;
+    @NotBlank
     private int balance;
+    @NotBlank
     private String rideOrDrive;
+    @NotBlank
     private String startTime;
+    @NotBlank
     private String endTime;
+    @NotBlank
     private String day;
+
+    private String address;
 
     public String getUsername() {
         return username;
@@ -56,6 +67,14 @@ public class UpdateUserRequest {
         this.day = day;
     }
 
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
     @Override
     public String toString() {
         return "UpdateUserRequest{" +
@@ -65,6 +84,7 @@ public class UpdateUserRequest {
                 ", startTime='" + startTime + '\'' +
                 ", endTime='" + endTime + '\'' +
                 ", day='" + day + '\'' +
+                ", address='" + address + '\'' +
                 '}';
     }
 }

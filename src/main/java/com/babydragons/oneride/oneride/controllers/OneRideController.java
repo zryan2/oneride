@@ -39,10 +39,15 @@ public class OneRideController {
         return firebaseConnection.getUsers();
     }
 
-    @PutMapping("update_user")
+    @PutMapping("/update_user")
     public void updateUser(@RequestBody UpdateUserRequest request){
         firebaseConnection.updateUser(request);
         System.out.println(request);
+    }
+
+    @GetMapping("/assign_rides")
+    public void assignRides(){
+        firebaseConnection.assignRiders();
     }
 //    private void initFirebase() throws Exception{
 ////        FileInputStream serviceAccount = null;
