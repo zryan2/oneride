@@ -40,7 +40,7 @@ public class OneRideController {
         return firebaseConnection.getUsers();
     }
 
-    @PutMapping("/update_user")
+    @PostMapping("/update_user")
     public void updateUser(@RequestBody UpdateUserRequest request){
         firebaseConnection.updateUser(request);
         System.out.println(request);
