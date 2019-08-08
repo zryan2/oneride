@@ -11,6 +11,7 @@ import org.h2.engine.Database;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Component;
 
+import javax.xml.crypto.Data;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -51,6 +52,25 @@ public class FirebaseConnection {
         });
 
         System.out.println(childReference.getKey());
+
+    }
+
+    public void assignRiders(){
+        DatabaseReference databaseReference = firebaseDatabase.getReference("/");
+        databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot snapshot) {
+                for (DataSnapshot data : snapshot.getChildren()){
+                    System.out.println(data);
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+
+            }
+        });
+        databaseReference.child("");
 
     }
 
