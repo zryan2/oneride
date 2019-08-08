@@ -7,14 +7,7 @@ public class User {
     private String rideOrDrive;
     private String startTime;
     private String endTime;
-
-//    public String getUsername() {
-//        return username;
-//    }
-//
-//    public void setUsername(String username) {
-//        this.username = username;
-//    }
+    private String address;
 
     public int getBalance() {
         return balance;
@@ -54,5 +47,13 @@ public class User {
 
     public void setDay(String day) {
         this.day = day;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 }

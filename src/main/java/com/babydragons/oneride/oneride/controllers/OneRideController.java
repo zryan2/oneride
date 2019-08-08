@@ -44,6 +44,11 @@ public class OneRideController {
         firebaseConnection.updateUser(request);
         System.out.println(request);
     }
+
+    @GetMapping("assignRides")
+    public void assignRides(){
+
+    }
 //    private void initFirebase() throws Exception{
 ////        FileInputStream serviceAccount = null;
 ////        serviceAccount = new FileInputStream("C:\\Users\\zengr\\IdeaProjects\\oneride\\src\\main\\resources/serviceAccountKey.json");

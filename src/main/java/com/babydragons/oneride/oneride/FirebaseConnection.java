@@ -41,6 +41,7 @@ public class FirebaseConnection {
         user.setEndTime(request.getEndTime());
         user.setDay(request.getDay());
         user.setRideOrDrive(request.getRideOrDrive());
+        user.setAddress(request.getAddress());
 
         childReference.setValue(user, new DatabaseReference.CompletionListener() {
             @Override
