@@ -9,6 +9,9 @@ public class UserResponse {
         this.username = username;
     }
 
+    public UserResponse() {
+    }
+
     public Long getId() {
         return id;
     }
@@ -23,5 +26,13 @@ public class UserResponse {
 
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    @Override
+    public String toString() {
+        return "UserResponse{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                '}';
     }
 }
